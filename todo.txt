@@ -1,0 +1,4 @@
+Idea:
+Any action that needs authentication before successful dispatch can be passed as a callback to the login page
+    The login page now has this callback in memory, which means as long the page is alive and NOT refreshed, this callback is available to be executed on successful login
+     - NOT DOABLE, how do u pass the callback? inside 'state' of the history?? well, it doesn't allow callbacks
