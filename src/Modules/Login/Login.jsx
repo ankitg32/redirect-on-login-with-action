@@ -30,7 +30,8 @@ const Login = (props) => {
     if (response === "200") {
       // dispatch queued actions here
       store.dispatch(loginSuccessful());
-      console.log("login successful", props.history.push(nextPath));
+      console.log("login successful");
+      props.history.push(nextPath);
     } else {
       store.dispatch(loginFailed());
       console.log("login failed");

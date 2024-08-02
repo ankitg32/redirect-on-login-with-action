@@ -39,7 +39,7 @@ const setFavourite = (item, history, location) => (dispatch, getState) => {
 };
 
 const initialState = {
-  favouritePage: false,
+  isFavouritePage: false,
 };
 
 const homeReducer = (state = initialState, action) => {
@@ -47,7 +47,7 @@ const homeReducer = (state = initialState, action) => {
     case TOGGLE_FAVOURITE:
       return {
         ...state,
-        favouritePage: !state.favouritePage,
+        isFavouritePage: !state.isFavouritePage,
       };
     default:
       return state;
@@ -59,6 +59,7 @@ addSlice(HOME, homeReducer);
 export const getHomeState = () => getSliceState(HOME);
 
 const Home = (props) => {
+  // props passed by the Route component. ref: https://v5.reactrouter.com/web/api/Route/route-render-methods
   const { history, location, checked } = props;
 
   const toggleFavourite = () => {
@@ -76,9 +77,9 @@ const Home = (props) => {
 };
 
 const mapStateToProps = (state) => {
-  const favouritePage = getHomeState().favouritePage;
+  const isFavouritePage = getHomeState().isFavouritePage;
   return {
-    checked: favouritePage,
+    checked: isFavouritePage,
   };
 };
 

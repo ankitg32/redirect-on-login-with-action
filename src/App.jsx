@@ -7,13 +7,17 @@ import About from "./Modules/About";
 import { Provider } from "react-redux";
 import store from "./Modules/store/store";
 
+// react-router uses this history package as one of the two dependencies (other being React itself)
+// can refer this to understand more on this history package (wrapper around browser's history API)
+// https://github.com/remix-run/history
+
 function App() {
   return (
     <Provider store={store}>
       <BrowserRouter>
         <div className="App">
           <h1>My App</h1>
-          {/* <NavLink
+          <NavLink
             to={(location) => ({
               ...location,
               pathname: "/",
@@ -21,7 +25,7 @@ function App() {
             })}
           >
             Home
-          </NavLink> */}
+          </NavLink>
           <NavLink
             to={(location) => ({
               ...location,
